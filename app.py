@@ -140,11 +140,6 @@ if page == "À propos":
 if page == "Accueil":
     st.image("fck.svg", width=150)  # Affiche ton SVG directement
     st.markdown("## 📢 Dernières actualités sur Anonymous")
-    st.markdown("""
-        <div style="text-align: center;">
-            <img src="fck.svg" width="150">
-        </div>
-    """, unsafe_allow_html=True)
     
     with st.spinner("🔍 Chargement des actualités..."):
         time.sleep(1)
