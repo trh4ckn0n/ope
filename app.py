@@ -127,7 +127,7 @@ if page == "À propos":
     Ce projet est **strictement éducatif** et ne vise en aucun cas à inciter à des activités illégales.
     """)
 
-    st.write("[![Star](<https://img.shields.io/github/stars/trh4ckn0n/ope.svg?logo=github&style=social)](<https://gitHub.com/trh4ckn0n/ope)")
+    st.write("[![Star](https://img.shields.io/github/stars/trh4ckn0n/ope.svg?logo=github&style=social)](https://gitHub.com/trh4ckn0n/ope)")
     # Ajout du logo Anonymous en bas
     st.markdown("""
         <div style="text-align: center;">
