@@ -91,8 +91,7 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 st.sidebar.header("🔎 Navigation")
-page = st.sidebar.radio("Choisissez une section", ["Accueil", "Opérations en cours", "Histoire d'Anonymous", "Ressources"])
-
+page = st.sidebar.radio("Choisissez une section", ["Accueil", "Opérations en cours", "Histoire d'Anonymous", "Ressources", "À propos"])
 # 📰 RÉCUPÉRATION DES ACTUALITÉS (RSS Google News)
 def get_anonymous_news():
     rss_url = "https://news.google.com/rss/search?q=Anonymous+Hacktivism&hl=fr&gl=FR&ceid=FR:fr"
@@ -108,6 +107,32 @@ def get_anonymous_news():
     except Exception as e:
         return [{"title": f"🚨 Erreur de connexion : {str(e)}", "link": "#"}]    
 
+# Ajout d'une nouvelle option dans la navigation
+
+# 📄 PAGE À PROPOS
+if page == "À propos":
+    st.markdown("## ℹ️ À propos d'Anonymous Tracker")
+
+    st.write("""
+    **Anonymous Tracker** est une plateforme interactive permettant de suivre les actions du collectif Anonymous à travers le monde.
+    Son objectif est d'offrir une **visualisation en temps réel** des opérations, une centralisation des informations issues de sources OSINT,
+    et un espace éducatif pour sensibiliser à la cybersécurité et au hacktivisme.
+
+    🚀 **Fonctionnalités principales** :
+    - 📢 **Fil d'actualités** sur Anonymous et le hacktivisme.
+    - 🌍 **Carte interactive** des opérations en cours.
+    - 📜 **Histoire du collectif** pour comprendre son impact.
+    - 📚 **Ressources** pour apprendre l'OSINT et la cybersécurité.
+
+    Ce projet est **strictement éducatif** et ne vise en aucun cas à inciter à des activités illégales.
+    """)
+
+    # Ajout du logo Anonymous en bas
+    st.markdown("""
+        <div style="text-align: center;">
+            <img src="https://e.top4top.io/p_33570y4z00.png" width="150">
+        </div>
+    """, unsafe_allow_html=True)
 # PAGE ACCUEIL
 if page == "Accueil":
     st.markdown("## 📢 Dernières actualités sur Anonymous")
