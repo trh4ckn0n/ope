@@ -17,17 +17,17 @@ st.set_page_config(
 st.markdown("""
     <style>
         body {
-            background-image: url('https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/6c8KI301%20(2).svg');
+            background-image: url('https://raw.githubusercontent.com/trh4ckn0n/ope/2197d0f1cae8e2637321d69087c4f59f09009f52/6c8KI301.svg');
             background-size: cover;  /* Couvre tout l'écran */
-            background-position: center;  /* Centrer l'image */
+            background-position: top center;  /* L'image est centrée en haut */
             background-repeat: no-repeat; /* Ne pas répéter l'image */
+            background-attachment: fixed; /* L'image reste fixe lors du défilement */
             color: #0f0;
             font-family: 'Courier New', monospace;
         }
         .stApp {
             background-color: transparent; /* Rendre le fond de l'application transparent */
-        }
-        
+        }        
         .stMarkdown { color: #0f0; }
         .stSidebar { background-color: #111; color: #0f0; border-right: 2px solid #0f0; }
 
