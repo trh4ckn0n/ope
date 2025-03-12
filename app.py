@@ -180,7 +180,7 @@ elif page == "Opérations en cours":
 # 📜 PAGE HISTOIRE D'ANONYMOUS
 elif page == "Histoire d'Anonymous":
     st.markdown("## 📜 Histoire d'Anonymous")
-    st.sidebar.markdown("""
+    st.markdown("""
     <div style="text-align: center;">
         <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/6c8KI301%20(4).svg" width="150">
     </div>
