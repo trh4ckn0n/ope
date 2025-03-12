@@ -29,9 +29,20 @@ st.markdown("""
 
 # TITRE PRINCIPAL AVEC EFFET
 st.markdown('<h1 class="title">🕶️ Anonymous Tracker : Luttes et Opérations en Cours</h1>', unsafe_allow_html=True)
+# Ajout du logo principal
+st.markdown("""
+    <div style="text-align: center;">
+        <img src="https://e.top4top.io/p_33570y4z00.png" width="150">
+    </div>
+""", unsafe_allow_html=True)
 st.markdown('<div class="banner">⚡ Live updates | Cyberwarfare & Hacktivism ⚡</div>', unsafe_allow_html=True)
 
 # SIDEBAR INTERACTIVE
+st.sidebar.markdown("""
+    <div style="text-align: center;">
+        <img src="https://f.top4top.io/p_3357q35po1.png" width="180">
+    </div>
+""", unsafe_allow_html=True)
 st.sidebar.header("🔎 Navigation")
 page = st.sidebar.radio("Choisissez une section", ["Accueil", "Opérations en cours", "Histoire d'Anonymous", "Ressources"])
 
