@@ -150,10 +150,10 @@ elif page == "Opérations en cours":
 
     # Base de données des opérations Anonymous
     data = pd.DataFrame({
-        "Ville": ["Paris", "New York", "Berlin", "Tokyo", "Gaza", "Minsk", "Kiev"],
+        "Ville": ["Paris", "New York", "Berlin", "Tokyo", "Roma", "Gaza", "Minsk", "Kiev"],
         "Latitude": [48.8566, 40.7128, 52.5200, 35.6895, 41.9028, 31.5, 50.4501],
         "Longitude": [2.3522, -74.0060, 13.4050, 139.6917, 12.4964, 34.47, 30.5234],
-        "Opération": ["#OpFrance", "#OpUSA", "#OpGermany", "#OpJapan", "#Roma", "#OpIsrahell", "#OpFckPtn"]
+        "Opération": ["#OpFrance", "#OpUSA", "#OpGermany", "#OpJapan", "#OpItalia", "#OpIsrahell", "#OpFckPtn"]
     })
 
     fig = px.scatter_mapbox(
