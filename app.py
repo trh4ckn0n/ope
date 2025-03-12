@@ -36,6 +36,7 @@ if page == "Accueil":
         st.markdown(f"🔹 [{article['title']}]({article['link']})")
 
 # Page Opérations en cours (exemple avec une carte)
+# Page Opérations en cours (exemple avec une carte)
 elif page == "Opérations en cours":
     st.markdown("## 🌍 Carte des Opérations en Cours")
     
@@ -47,12 +48,12 @@ elif page == "Opérations en cours":
         "Opération": ["#OpFrance", "#OpUSA", "#OpGermany", "#OpJapan", "#OpIsrahell", "#OpRussia", "#OpFckPtn"]
     })
     
-    fig = px.scatter_mapbox(data, lat="Latitude", lon="Longitude", 
-                            text="Opération", zoom=1,
-                            mapbox_style="carto-darkmatter")
+    # Utilisation de scatter_map
+    fig = px.scatter_map(data, lat="Latitude", lon="Longitude", 
+                         text="Opération", zoom=1)
     
     st.plotly_chart(fig)
-
+    
 # Page Histoire
 elif page == "Histoire d'Anonymous":
     st.markdown("## 📜 Histoire d'Anonymous")
