@@ -86,7 +86,7 @@ st.markdown('<div class="banner">âš¡ Live updates | Cyberwarfare & Hacktivism âš
 # SIDEBAR INTERACTIVE AVEC LOGO (VERSION FOND NOIR)
 st.sidebar.markdown("""
     <div style="text-align: center;">
-        <img src="https://g.top4top.io/p_3357lptuk0.png" width="180">
+        <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/uYidUgA01.svg" width="180">
     </div>
 """, unsafe_allow_html=True)
 
