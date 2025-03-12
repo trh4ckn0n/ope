@@ -13,7 +13,7 @@ st.set_page_config(
     page_icon="🕶️"
 )
 
-# CSS PERSONNALISÉ (Thème Hacker)
+# CSS PERSONNALISÉ (Thème Hacker + EFFET GLITCH)
 st.markdown("""
     <style>
         body { background-color: #000; color: #0f0; font-family: 'Courier New', monospace; }
@@ -21,28 +21,75 @@ st.markdown("""
         .stMarkdown { color: #0f0; }
         .stSidebar { background-color: #111; color: #0f0; border-right: 2px solid #0f0; }
         .stButton>button { background-color: #0f0; color: #000; font-weight: bold; }
-        .title { text-align: center; font-size: 36px; font-weight: bold; text-shadow: 0 0 10px #0f0; }
-        .banner { text-align: center; font-size: 20px; color: #0f0; animation: blink 1s infinite; }
-        @keyframes blink { 50% { opacity: 0.5; } }
+        
+        /* Effet glitch sur le titre */
+        .glitch {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            color: #0f0;
+            position: relative;
+            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+            animation: glitch 1.5s infinite;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Animation blink */
+        .banner {
+            text-align: center;
+            font-size: 20px;
+            color: #0f0;
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+        
+        /* Boutons hacker */
+        .stButton>button {
+            border: 2px solid #0f0;
+            background-color: transparent;
+            color: #0f0;
+            font-weight: bold;
+            text-shadow: 0 0 5px #0f0;
+            transition: 0.3s;
+        }
+        .stButton>button:hover {
+            background-color: #0f0;
+            color: #000;
+            text-shadow: none;
+        }
     </style>
 """, unsafe_allow_html=True)
 
-# TITRE PRINCIPAL AVEC EFFET
-st.markdown('<h1 class="title">🕶️ Anonymous Tracker : Luttes et Opérations en Cours</h1>', unsafe_allow_html=True)
-# Ajout du logo principal
+# 🔥 TITRE PRINCIPAL AVEC GLITCH
+st.markdown('<h1 class="glitch">🕶️ Anonymous Tracker : Luttes et Opérations en Cours</h1>', unsafe_allow_html=True)
+
+# LOGO PRINCIPAL
 st.markdown("""
     <div style="text-align: center;">
         <img src="https://e.top4top.io/p_33570y4z00.png" width="150">
     </div>
 """, unsafe_allow_html=True)
+
+# ANIMATION SOUS-TITRE
 st.markdown('<div class="banner">⚡ Live updates | Cyberwarfare & Hacktivism ⚡</div>', unsafe_allow_html=True)
 
-# SIDEBAR INTERACTIVE
+# SIDEBAR INTERACTIVE AVEC LOGO (VERSION FOND NOIR)
 st.sidebar.markdown("""
     <div style="text-align: center;">
-        <img src="https://g.top4top.io/p_3357lptuk0.png" width="180">
+        <img src="https://f.top4top.io/p_3357q35po1.png" width="180">
     </div>
 """, unsafe_allow_html=True)
+
 st.sidebar.header("🔎 Navigation")
 page = st.sidebar.radio("Choisissez une section", ["Accueil", "Opérations en cours", "Histoire d'Anonymous", "Ressources"])
 
