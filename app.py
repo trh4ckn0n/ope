@@ -104,7 +104,7 @@ ph = PasswordHasher()
 
 # Exemple de base de données utilisateur fictive (en production, tu utiliserais une base de données réelle)
 users_db = {
-    "admin": ph.hash("adminpassword"),  # Mot de passe sécurisé
+    "admin": ph.hash("trkn"),  # Mot de passe sécurisé
 }
 
 # Gestion des sessions
