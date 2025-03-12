@@ -101,11 +101,6 @@ st.sidebar.markdown("""
 
 st.sidebar.header("🔎 Navigation")
 st.sidebar.write("[![Star](https://img.shields.io/github/stars/trh4ckn0n/ope.svg?logo=github&style=social)](https://gitHub.com/trh4ckn0n/ope)")
-st.sidebar.markdown("""
-    <div style="text-align: center;">
-        <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/6c8KI301%20(4).svg" width="150">
-    </div>
-""", unsafe_allow_html=True)
 
 page = st.sidebar.radio("Choisissez une section", ["Accueil", "Opérations en cours", "Histoire d'Anonymous", "Ressources", "À propos"])
 # 📰 RÉCUPÉRATION DES ACTUALITÉS (RSS Google News)
@@ -147,7 +142,7 @@ if page == "À propos":
     # Ajout du logo Anonymous en bas
     st.markdown("""
         <div style="text-align: center;">
-            <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/picsvg_download.svg" width="150">
+            <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/6c8KI301%20(1).svg" width="150">
         </div>
     """, unsafe_allow_html=True)
 # PAGE ACCUEIL
@@ -185,6 +180,12 @@ elif page == "Opérations en cours":
 # 📜 PAGE HISTOIRE D'ANONYMOUS
 elif page == "Histoire d'Anonymous":
     st.markdown("## 📜 Histoire d'Anonymous")
+    st.sidebar.markdown("""
+    <div style="text-align: center;">
+        <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/6c8KI301%20(4).svg" width="150">
+    </div>
+""", unsafe_allow_html=True)
+
     st.write("""
     Anonymous est un collectif hacktiviste né sur le forum 4chan en 2003.
     Leur devise est : *We Are Anonymous. We Are Legion. We Do Not Forgive. We Do Not Forget. Expect Us.*
