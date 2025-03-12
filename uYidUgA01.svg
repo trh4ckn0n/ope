@@ -6,18 +6,7 @@
  preserveAspectRatio="xMidYMid meet">
 <metadata>
 Created by potrace 1.10, written by Peter Selinger 2001-2011
-    <dc:creator>trh4ckn0n</dc:creator>
-    <dc:title>SVG Example</dc:title>
-    <dc:description>SVG file with meta tags for preview</dc:description>
-    <dc:keywords>SVG, metadata, preview, example, graphic</dc:keywords>
-    <meta name="author" content="trh4ckn0n" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="SVG Example by trh4ckn0n" />
-    <meta property="og:description" content="SVG file with metadata for preview" />
-    <meta property="og:image" content="https://ope-anon.streamlit.app/" />
-    <meta property="og:url" content="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/uYidUgA01.svg" />
-    <meta property="og:type" content="image/svg+xml" />
-  </metadata>
+</metadata>
  <defs>
     <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
