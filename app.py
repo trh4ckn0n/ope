@@ -76,7 +76,7 @@ st.markdown('<h1 class="glitch">🕶️ Anonymous Tracker : Luttes et Opération
 # LOGO PRINCIPAL
 st.markdown("""
     <div style="text-align: center;">
-        <img src="https://e.top4top.io/p_33570y4z00.png" width="150">
+        <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/picsvg_download.svg" width="150">
     </div>
 """, unsafe_allow_html=True)
 
@@ -86,7 +86,7 @@ st.markdown('<div class="banner">⚡ Live updates | Cyberwarfare & Hacktivism �
 # SIDEBAR INTERACTIVE AVEC LOGO (VERSION FOND NOIR)
 st.sidebar.markdown("""
     <div style="text-align: center;">
-        <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/uYidUgA01.svg" width="180">
+        <img src="https://e.top4top.io/p_33570y4z00.png" width="180">
     </div>
 """, unsafe_allow_html=True)
 
@@ -137,8 +137,7 @@ if page == "À propos":
         </div>
     """, unsafe_allow_html=True)
 # PAGE ACCUEIL
-if page == "Accueil":
-    st.image("fck.svg", width=150)  # Affiche ton SVG directement
+if page == "Accueil":  
     st.markdown("## 📢 Dernières actualités sur Anonymous")
     
     with st.spinner("🔍 Chargement des actualités..."):
