@@ -85,7 +85,7 @@ st.markdown('<h1 class="glitch">🕶️ Anonymous Tracker : Luttes et Opération
 # LOGO PRINCIPAL
 st.markdown("""
     <div style="text-align: center;">
-        <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/picsvg_download.svg" width="150">
+        <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/uYidUgA01.svg" width="150">
     </div>
 """, unsafe_allow_html=True)
 
