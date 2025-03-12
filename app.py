@@ -7,6 +7,32 @@ import pandas as pd
 # Configuration de la page
 st.set_page_config(page_title="Anonymous Tracker", layout="wide")
 
+# CSS pour un thème sombre et contrasté
+st.markdown(
+    """
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+        }
+        .stApp {
+            background-color: #0d1117;
+        }
+        .sidebar .sidebar-content {
+            background-color: #161b22;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #00ffcc;
+        }
+        .stMarkdown a {
+            color: #ff0066;
+            font-weight: bold;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Titre principal
 st.title("🕶️ Anonymous Tracker : Luttes et Opérations en Cours")
 
@@ -14,7 +40,7 @@ st.title("🕶️ Anonymous Tracker : Luttes et Opérations en Cours")
 st.sidebar.header("Navigation")
 page = st.sidebar.radio("Choisissez une section", ["Accueil", "Opérations en cours", "Histoire d'Anonymous", "Ressources"])
 
-# Fonction pour récupérer des news (exemple avec un scraping de site)
+# Fonction pour récupérer des news
 def get_anonymous_news():
     url = "https://www.cybersecurity-insiders.com/category/anonymous/"  # Exemple de source
     response = requests.get(url)
@@ -36,11 +62,10 @@ if page == "Accueil":
         st.markdown(f"🔹 [{article['title']}]({article['link']})")
 
 # Page Opérations en cours (exemple avec une carte)
-# Page Opérations en cours (exemple avec une carte)
 elif page == "Opérations en cours":
     st.markdown("## 🌍 Carte des Opérations en Cours")
     
-    # Dataset avec les latitudes et longitudes complètes
+    # Dataset avec les latitudes et longitudes
     data = pd.DataFrame({
         "Ville": ["Paris", "New York", "Berlin", "Tokyo", "Rome", "Gaza", "Kiev"],
         "Latitude": [48.8566, 40.7128, 52.5200, 35.6895, 41.9028, 31.5, 50.4501],
@@ -48,12 +73,17 @@ elif page == "Opérations en cours":
         "Opération": ["#OpFrance", "#OpUSA", "#OpGermany", "#OpJapan", "#OpIsrahell", "#OpRussia", "#OpFckPtn"]
     })
     
-    # Utilisation de scatter_map
-    fig = px.scatter_map(data, lat="Latitude", lon="Longitude", 
-                         text="Opération", zoom=1)
+    # Carte avec un fond sombre et des marqueurs colorés
+    fig = px.scatter_mapbox(
+        data, 
+        lat="Latitude", lon="Longitude", 
+        text="Opération", zoom=1,
+        mapbox_style="carto-darkmatter",  # Fond sombre
+        color_discrete_sequence=["#ff0066"]  # Couleur des marqueurs en fluo
+    )
     
     st.plotly_chart(fig)
-    
+
 # Page Histoire
 elif page == "Histoire d'Anonymous":
     st.markdown("## 📜 Histoire d'Anonymous")
