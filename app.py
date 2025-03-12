@@ -30,8 +30,7 @@ st.markdown("""
         
         .stMarkdown { color: #0f0; }
         .stSidebar { background-color: #111; color: #0f0; border-right: 2px solid #0f0; }
-        .stButton>button { background-color: #0f0; color: #000; font-weight: bold; }
-        
+
         /* Effet glitch sur le titre */
         .glitch {
             font-size: 40px;
