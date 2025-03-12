@@ -101,7 +101,7 @@ def get_anonymous_news():
     
     try:
         feed = feedparser.parse(rss_url)
-        articles = [{"title": entry.title, "link": entry.link} for entry in feed.entries[:5]]
+        articles = [{"title": entry.title, "link": entry.link} for entry in feed.entries[:8]]
 
         if not articles:
             return [{"title": "⚠️ Aucune actualité disponible", "link": "#"}]
