@@ -32,7 +32,7 @@ st.markdown('<h1 class="title">🕶️ Anonymous Tracker : Luttes et Opérations
 # Ajout du logo principal
 st.markdown("""
     <div style="text-align: center;">
-        <img src="https://f.top4top.io/p_3357q35po1.png" width="150">
+        <img src="https://e.top4top.io/p_33570y4z00.png" width="150">
     </div>
 """, unsafe_allow_html=True)
 st.markdown('<div class="banner">⚡ Live updates | Cyberwarfare & Hacktivism ⚡</div>', unsafe_allow_html=True)
@@ -40,7 +40,7 @@ st.markdown('<div class="banner">⚡ Live updates | Cyberwarfare & Hacktivism �
 # SIDEBAR INTERACTIVE
 st.sidebar.markdown("""
     <div style="text-align: center;">
-        <img src="https://e.top4top.io/p_33570y4z00.png" width="180">
+        <img src="https://g.top4top.io/p_3357lptuk0.png" width="180">
     </div>
 """, unsafe_allow_html=True)
 st.sidebar.header("🔎 Navigation")
