@@ -177,7 +177,7 @@ elif page == "Histoire d'Anonymous":
 elif page == "Ressources":
     st.markdown("## 📚 Ressources et Apprentissage")
     st.write("- [Guide de cybersécurité](https://www.cybersecurity-guide.com)")
-    st.write("- [Forum Anonymous (Tor)](http://example.onion)")
+    st.write("- [Forum Anonymous (Tor)](http://**.onion/soon)")
     st.write("- [Débuter en OSINT](https://osintframework.com)")
 
 # 📢 FOOTER
