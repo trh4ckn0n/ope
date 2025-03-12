@@ -3,97 +3,139 @@ import requests
 from bs4 import BeautifulSoup
 import plotly.express as px
 import pandas as pd
+import time
 
-# Configuration de la page
-st.set_page_config(page_title="Anonymous Tracker", layout="wide")
-
-# CSS pour un thème sombre et contrasté
-st.markdown(
-    """
-    <style>
-        body {
-            background-color: #0d1117;
-            color: #ffffff;
-        }
-        .stApp {
-            background-color: #0d1117;
-        }
-        .sidebar .sidebar-content {
-            background-color: #161b22;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: #00ffcc;
-        }
-        .stMarkdown a {
-            color: #ff0066;
-            font-weight: bold;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
+# CONFIGURATION DE LA PAGE
+st.set_page_config(
+    page_title="Anonymous Tracker",
+    layout="wide",
+    page_icon="🕶️"
 )
 
-# Titre principal
-st.title("🕶️ Anonymous Tracker : Luttes et Opérations en Cours")
+# CSS PERSONNALISÉ (Thème Hacker)
+st.markdown("""
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+        }
+        .stApp {
+            background-color: #000;
+        }
+        .stMarkdown {
+            color: #0f0;
+        }
+        .stSidebar {
+            background-color: #111;
+            color: #0f0;
+            border-right: 2px solid #0f0;
+        }
+        .stButton>button {
+            background-color: #0f0;
+            color: #000;
+            font-weight: bold;
+        }
+        .stAlert {
+            background-color: #222;
+            color: #ff0;
+        }
+        .title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #0f0;
+        }
+        .banner {
+            text-align: center;
+            font-size: 20px;
+            color: #0f0;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-# Sidebar
-st.sidebar.header("Navigation")
+# TITRE PRINCIPAL AVEC EFFET
+st.markdown('<h1 class="title">🕶️ Anonymous Tracker : Luttes et Opérations en Cours</h1>', unsafe_allow_html=True)
+st.markdown('<div class="banner">⚡ Live updates | Cyberwarfare & Hacktivism ⚡</div>', unsafe_allow_html=True)
+
+# SIDEBAR INTERACTIVE
+st.sidebar.header("🔎 Navigation")
 page = st.sidebar.radio("Choisissez une section", ["Accueil", "Opérations en cours", "Histoire d'Anonymous", "Ressources"])
 
-# Fonction pour récupérer des news
+# SCRAPING ACTUALITÉS ANONYMOUS
 def get_anonymous_news():
-    url = "https://www.cybersecurity-insiders.com/category/anonymous/"  # Exemple de source
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    news = soup.find_all('h2', class_='entry-title')
+    url = "https://www.cybersecurity-insiders.com/category/anonymous/"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    
+    try:
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        news = soup.find_all('h2', class_='entry-title')
+        
+        articles = []
+        for n in news[:5]:  
+            title = n.text.strip()
+            link = n.a['href']
+            articles.append({"title": title, "link": link})
+        
+        if not articles:
+            return [{"title": "⚠️ Aucune actualité disponible", "link": "#"}]
+        
+        return articles
+    
+    except Exception as e:
+        return [{"title": f"🚨 Erreur de connexion : {str(e)}", "link": "#"}]
 
-    articles = []
-    for n in news[:5]:  # Récupérer les 5 derniers articles
-        title = n.text.strip()
-        link = n.a['href']
-        articles.append({"title": title, "link": link})
-    return articles
-
-# Page Accueil
+# PAGE ACCUEIL
 if page == "Accueil":
     st.markdown("## 📢 Dernières actualités sur Anonymous")
-    news = get_anonymous_news()
+
+    with st.spinner("🔍 Chargement des actualités..."):
+        time.sleep(1)
+        news = get_anonymous_news()
+
     for article in news:
         st.markdown(f"🔹 [{article['title']}]({article['link']})")
 
-# Page Opérations en cours (exemple avec une carte)
+# PAGE OPÉRATIONS EN COURS (CARTE INTERACTIVE)
 elif page == "Opérations en cours":
     st.markdown("## 🌍 Carte des Opérations en Cours")
-    
-    # Dataset avec les latitudes et longitudes
+
+    # Base de données des opérations Anonymous
     data = pd.DataFrame({
         "Ville": ["Paris", "New York", "Berlin", "Tokyo", "Rome", "Gaza", "Kiev"],
         "Latitude": [48.8566, 40.7128, 52.5200, 35.6895, 41.9028, 31.5, 50.4501],
         "Longitude": [2.3522, -74.0060, 13.4050, 139.6917, 12.4964, 34.47, 30.5234],
         "Opération": ["#OpFrance", "#OpUSA", "#OpGermany", "#OpJapan", "#OpIsrahell", "#OpRussia", "#OpFckPtn"]
     })
-    
-    # Carte avec un fond sombre et des marqueurs colorés
-    fig = px.scatter_mapbox(
-        data, 
-        lat="Latitude", lon="Longitude", 
-        text="Opération", zoom=1,
-        mapbox_style="carto-darkmatter",  # Fond sombre
-        color_discrete_sequence=["#ff0066"]  # Couleur des marqueurs en fluo
-    )
-    
-    st.plotly_chart(fig)
 
-# Page Histoire
+    fig = px.scatter_mapbox(
+        data, lat="Latitude", lon="Longitude", 
+        text="Opération", zoom=1,
+        color_discrete_sequence=["#00FF00"],
+        mapbox_style="carto-darkmatter"
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
+
+# PAGE HISTOIRE D'ANONYMOUS
 elif page == "Histoire d'Anonymous":
     st.markdown("## 📜 Histoire d'Anonymous")
-    st.write("Anonymous est un collectif hacktiviste né sur le forum 4chan en 2003...")
+    st.write("""
+    Anonymous est un collectif hacktiviste né sur le forum 4chan en 2003.
+    Leur devise est : *We Are Anonymous. We Are Legion. We Do Not Forgive. We Do Not Forget. Expect Us.*
+    """)
 
-# Page Ressources
+# PAGE RESSOURCES ET APPRENTISSAGE
 elif page == "Ressources":
     st.markdown("## 📚 Ressources et Apprentissage")
     st.write("- [Guide de cybersécurité](https://www.cybersecurity-guide.com)")
     st.write("- [Forum Anonymous (Tor)](http://example.onion)")
+    st.write("- [Débuter en OSINT](https://osintframework.com)")
 
-# Footer
+# FOOTER
 st.sidebar.write("💡 **Projet éducatif et informatif uniquement**")
