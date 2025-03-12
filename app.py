@@ -134,7 +134,7 @@ if page == "À propos":
     # Ajout du logo Anonymous en bas
     st.markdown("""
         <div style="text-align: center;">
-            <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/6c8KI301%20(1).svg" width="150">
+            <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/YvxpKyM01.svg" width="150">
         </div>
     """, unsafe_allow_html=True)
 # PAGE ACCUEIL
