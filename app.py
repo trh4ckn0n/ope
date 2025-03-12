@@ -138,6 +138,12 @@ if page == "À propos":
     """, unsafe_allow_html=True)
 # PAGE ACCUEIL
 if page == "Accueil":
+    st.markdown("""
+        <div style="text-align: center;">
+            <img src="fck.svg" width="150">
+        </div>
+    """, unsafe_allow_html=True)
+    
     st.markdown("## 📢 Dernières actualités sur Anonymous")
 
     with st.spinner("🔍 Chargement des actualités..."):
