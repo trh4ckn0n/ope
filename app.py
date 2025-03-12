@@ -92,6 +92,11 @@ st.sidebar.markdown("""
 
 st.sidebar.header("🔎 Navigation")
 st.sidebar.write("[![Star](https://img.shields.io/github/stars/trh4ckn0n/ope.svg?logo=github&style=social)](https://gitHub.com/trh4ckn0n/ope)")
+st.markdown("""
+    <div style="text-align: center;">
+        <img src="https://raw.githubusercontent.com/trh4ckn0n/ope/refs/heads/main/picsvg_download.svg" width="150">
+    </div>
+""", unsafe_allow_html=True)
 
 page = st.sidebar.radio("Choisissez une section", ["Accueil", "Opérations en cours", "Histoire d'Anonymous", "Ressources", "À propos"])
 # 📰 RÉCUPÉRATION DES ACTUALITÉS (RSS Google News)
