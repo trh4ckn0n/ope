@@ -16,15 +16,7 @@ st.set_page_config(
 # CSS PERSONNALISÉ (Thème Hacker + EFFET GLITCH)
 st.markdown("""
     <style>
-        body {
-            background-image: url('https://raw.githubusercontent.com/trh4ckn0n/ope/2197d0f1cae8e2637321d69087c4f59f09009f52/6c8KI301.svg');
-            background-size: cover;  /* Couvre tout l'écran */
-            background-position: top center;  /* L'image est centrée en haut */
-            background-repeat: no-repeat; /* Ne pas répéter l'image */
-            background-attachment: fixed; /* L'image reste fixe lors du défilement */
-            color: #0f0;
-            font-family: 'Courier New', monospace;
-        }
+        body { background-color: #000; color: #0f0; font-family: 'Courier New', monospace; }
         .stApp {
             background-color: transparent; /* Rendre le fond de l'application transparent */
         }        
