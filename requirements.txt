@@ -4,3 +4,4 @@ beautifulsoup4
 plotly
 pandas
 feedparser
+argon2-cffi
