@@ -27,12 +27,7 @@ st.markdown("""
         .stApp {
             background-color: transparent; /* Rendre le fond de l'application transparent */
         }
-        .stSidebar {
-            background-color: #111;
-        }
         
-        body { background-color: #000; color: #0f0; font-family: 'Courier New', monospace; }
-        .stApp { background-color: #000; }
         .stMarkdown { color: #0f0; }
         .stSidebar { background-color: #111; color: #0f0; border-right: 2px solid #0f0; }
         .stButton>button { background-color: #0f0; color: #000; font-weight: bold; }
